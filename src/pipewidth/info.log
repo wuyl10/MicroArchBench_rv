@@ -1,0 +1,10 @@
+emu compiled at Oct 27 2024, 15:56:07
+Using simulated 32768B flash
+Using simulated 8386560MB RAM
+The image is ./build/pipewidth-riscv64-xs.bin
+ALU width: 4.020303
+Nop width: 3.885004
+BRU width: 2.970885
+FPU width: 4.030328
+Rename width: 5.941771
+Load width: 2.970885

@@ -1,0 +1,7 @@
+emu compiled at Oct 27 2024, 15:56:07
+Using simulated 32768B flash
+Using simulated 8386560MB RAM
+The image is ./build/freq-riscv64-xs.bin
+Core 0: [33mSOME SIGNAL STOPS THE PROGRAM at pc = 0x80000238
+[0m[35mCore-0 instrCnt = 1,494,121, cycleCnt = 1,409,238, IPC = 1.060233
+[0m
