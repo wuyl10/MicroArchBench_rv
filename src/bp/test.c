@@ -1,6 +1,5 @@
 #include "test.h"
-#include <klib.h>
-#include <klib-macros.h>
+#include "bench.h"
 
 #define N 5000LL
 #define MAXHIS 65536

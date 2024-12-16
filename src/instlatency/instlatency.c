@@ -1,7 +1,4 @@
-#include <klib.h>
-#include <klib-macros.h>
-
-
+#include "bench.h"
 
 #define FIVE ONE ONE ONE ONE ONE
 #define TEN FIVE FIVE
@@ -21,11 +18,6 @@
 #ifndef __LOOP_COUNT
 #define __LOOP_COUNT 1000000ULL
 #endif
-
-
-static inline double second() {
-    return (double)uptime() / 1000.0; // 将毫秒转为秒
-}
 
 // =================== Integer Multiplication Latency(指令之间有依赖) ===================
 void __attribute__((noinline)) mullat(uint64_t cnt) {
@@ -485,7 +477,7 @@ void fsqrtlat_test(double freq) {
 
 // =================== Main Function ===================
 int main() {
-    double freq = 0.000225; // 根据实际硬件频率设置
+    double freq = CPU_FREQ; // 根据实际硬件频率设置
     // mullat_test(freq);
     // mulbw_test(freq);
     // udivlat_test(freq);

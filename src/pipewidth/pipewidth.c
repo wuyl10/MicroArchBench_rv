@@ -1,7 +1,5 @@
-#include <klib.h>      
-#include <klib-macros.h>      
-#include <printf.h>      
 
+#include "bench.h"
 
 // 对齐与循环计数常量
 #ifndef __INNER_COUNT
@@ -12,23 +10,12 @@
 #define __LOOP_COUNT 10000ULL
 #endif
 
-// 定义CPU频率 (GHz) ，根据实际情况修改
-#define CPU_FREQ (0.000250)
-
-
 #define FIVE ONE ONE ONE ONE ONE
 #define TEN FIVE FIVE
 #define FIFTY TEN TEN TEN TEN TEN
 #define HUNDRED FIFTY FIFTY
 #define FHUNDRED HUNDRED HUNDRED HUNDRED HUNDRED HUNDRED
 #define THOUSAND FHUNDRED FHUNDRED
-
-// 获取当前时间（秒）
-static inline double second() {
-  // uptime() 返回毫秒数，转为秒
-  return (double)uptime() / 1000.0;
-}
-
 
 //====================== ALU width ======================
 void __attribute__ ((noinline)) aluwidth(uint64_t cnt) {

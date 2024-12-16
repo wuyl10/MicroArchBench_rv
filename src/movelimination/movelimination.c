@@ -1,7 +1,4 @@
-#include <klib.h>
-#include <klib-macros.h>
-
-
+#include "bench.h"
 
 #define FIVE ONE ONE ONE ONE ONE
 #define TEN FIVE FIVE
@@ -20,11 +17,6 @@
 #ifndef __LOOP_COUNT
 #define __LOOP_COUNT 5000ULL
 #endif
-
-static inline double second() {
-    return (double)uptime() / 1000.0; // 将毫秒转为秒
-}
-
 
 void __attribute__ ((noinline)) mov_imm_zero(uint64_t cnt) {
 #undef ONE
@@ -316,7 +308,7 @@ void xor_eli_test(double freq) {
 }
 
 int main(int argc, char* argv[]) {
-    double freq = 0.000225; // 根据实际硬件频率设置
+    double freq = CPU_FREQ;
     mov_imm_zero_test(freq);
     mov_imm_one_test(freq);
     mov_chain_test(freq);

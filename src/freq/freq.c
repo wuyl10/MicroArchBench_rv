@@ -1,10 +1,4 @@
-#include <klib.h>
-#include <klib-macros.h>
-
-
-static inline double second() {
-    return uptime()/1000.0;
-}
+#include "bench.h"
 
 #define FIVE ONE ONE ONE ONE ONE
 #define TEN FIVE FIVE
@@ -35,7 +29,7 @@ void freq_test() {
     double begin = second();
     freq(__LOOP_COUNT);  // 执行主测试循环
     double end = second();
-    double f = (__LOOP_COUNT * __INNER_COUNT) / 1000000000.0 / (end - begin);
+    double f = (__LOOP_COUNT * __INNER_COUNT) / 1.0e9 / (end - begin);
     char buffer[100];
     snprintf(buffer, sizeof(buffer), "Frequency: %f GHz, Cycle time: %f ns\n", f, 1/f);
     putstr(buffer);
