@@ -48,26 +48,26 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();       //毫秒
+        begin = nanosecond();       //毫秒
         ONE
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan = (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (1L + 1L)));     //转为纳秒
+        printf("%f\t", timeSpan / (N * (1L + 1L)));     //转为纳秒
     }
     putstr("\n");
 
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         TWO
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6  / (N * (2L + 1L)));
+        printf("%f\t", timeSpan / (N * (2L + 1L)));
 
     }
     putstr("\n");
@@ -75,13 +75,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         FOUR
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
         
-        printf("%f\t", timeSpan * 1.0e6 / (N * (4L + 1L)));
+        printf("%f\t", timeSpan / (N * (4L + 1L)));
 
     }
     putstr("\n");
@@ -89,13 +89,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         EIGHT
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (8L + 1L)));
+        printf("%f\t", timeSpan / (N * (8L + 1L)));
 
     }
     putstr("\n");
@@ -103,13 +103,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         SIXTEEN
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (16L + 1L)));
+        printf("%f\t", timeSpan / (N * (16L + 1L)));
 
     }
     putstr("\n");
@@ -117,13 +117,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         THIRTYTWO
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
  
-        printf("%f\t", timeSpan * 1.0e6 / (N * (32L + 1L)));
+        printf("%f\t", timeSpan / (N * (32L + 1L)));
 
     }
     putstr("\n");
@@ -131,13 +131,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         SIXTYFOUR
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (64L + 1L)));
+        printf("%f\t", timeSpan / (N * (64L + 1L)));
 
     }
     putstr("\n");
@@ -145,13 +145,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         HUNDRED
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (128L + 1L)));
+        printf("%f\t", timeSpan / (N * (128L + 1L)));
 
     }
     putstr("\n");
@@ -159,13 +159,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         TWOHUNDRED
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (256L + 1L)));
+        printf("%f\t", timeSpan / (N * (256L + 1L)));
 
     }
     putstr("\n");
@@ -173,13 +173,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         FIVEHUNDRED
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (512L + 1L)));
+        printf("%f\t", timeSpan / (N * (512L + 1L)));
 
     }
     putstr("\n");
@@ -187,13 +187,13 @@ int main()
     for(int cur_len=1;cur_len<31;cur_len++){
         mycopy(a,c,pattern[cur_len]);
         repeat = N;
-        begin = uptime();
+        begin = nanosecond();
         TENHUNDRED
-        end = uptime();
+        end = nanosecond();
 
         long long timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan * 1.0e6 / (N * (1024L + 1L)));
+        printf("%f\t", timeSpan / (N * (1024L + 1L)));
 
     }
     putstr("\n");
