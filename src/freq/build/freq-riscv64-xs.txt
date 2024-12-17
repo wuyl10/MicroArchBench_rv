@@ -114,51 +114,57 @@ Disassembly of section .text:
 
 000000008000027e <freq_test>:
     8000027e:	6509                	lui	a0,0x2
-    80000280:	7175                	addi	sp,sp,-144
+    80000280:	7135                	addi	sp,sp,-160
     80000282:	71050513          	addi	a0,a0,1808 # 2710 <i+0x26f0>
-    80000286:	e506                	sd	ra,136(sp)
-    80000288:	bca2                	fsd	fs0,120(sp)
-    8000028a:	b8a6                	fsd	fs1,112(sp)
-    8000028c:	f75ff0ef          	jal	80000200 <freq>
-    80000290:	3b4010ef          	jal	80001644 <uptime>
-    80000294:	d2150453          	fcvt.d.wu	fs0,a0
-    80000298:	000f4537          	lui	a0,0xf4
-    8000029c:	24050513          	addi	a0,a0,576 # f4240 <i+0xf4220>
-    800002a0:	00002797          	auipc	a5,0x2
-    800002a4:	b207b487          	fld	fs1,-1248(a5) # 80001dc0 <am_keycode+0x210>
-    800002a8:	f59ff0ef          	jal	80000200 <freq>
-    800002ac:	398010ef          	jal	80001644 <uptime>
-    800002b0:	d21507d3          	fcvt.d.wu	fa5,a0
-    800002b4:	1a947453          	fdiv.d	fs0,fs0,fs1
-    800002b8:	00002797          	auipc	a5,0x2
-    800002bc:	b107b707          	fld	fa4,-1264(a5) # 80001dc8 <am_keycode+0x218>
-    800002c0:	00002797          	auipc	a5,0x2
-    800002c4:	b107b687          	fld	fa3,-1264(a5) # 80001dd0 <am_keycode+0x220>
-    800002c8:	0028                	addi	a0,sp,8
-    800002ca:	00001617          	auipc	a2,0x1
-    800002ce:	63660613          	addi	a2,a2,1590 # 80001900 <__am_timer_read+0x8c>
-    800002d2:	06400593          	li	a1,100
-    800002d6:	1a97f7d3          	fdiv.d	fa5,fa5,fs1
-    800002da:	0a87f7d3          	fsub.d	fa5,fa5,fs0
-    800002de:	1af777d3          	fdiv.d	fa5,fa4,fa5
-    800002e2:	1af6f753          	fdiv.d	fa4,fa3,fa5
-    800002e6:	e20786d3          	fmv.x.d	a3,fa5
-    800002ea:	e2070753          	fmv.x.d	a4,fa4
-    800002ee:	324010ef          	jal	80001612 <snprintf_>
-    800002f2:	00814503          	lbu	a0,8(sp)
-    800002f6:	c911                	beqz	a0,8000030a <freq_test+0x8c>
-    800002f8:	e122                	sd	s0,128(sp)
-    800002fa:	0020                	addi	s0,sp,8
-    800002fc:	0405                	addi	s0,s0,1
-    800002fe:	0fc000ef          	jal	800003fa <_putc>
-    80000302:	00044503          	lbu	a0,0(s0)
-    80000306:	f97d                	bnez	a0,800002fc <freq_test+0x7e>
-    80000308:	640a                	ld	s0,128(sp)
-    8000030a:	60aa                	ld	ra,136(sp)
-    8000030c:	3466                	fld	fs0,120(sp)
-    8000030e:	34c6                	fld	fs1,112(sp)
-    80000310:	6149                	addi	sp,sp,144
-    80000312:	8082                	ret
+    80000286:	ed06                	sd	ra,152(sp)
+    80000288:	a522                	fsd	fs0,136(sp)
+    8000028a:	a126                	fsd	fs1,128(sp)
+    8000028c:	bcca                	fsd	fs2,120(sp)
+    8000028e:	f73ff0ef          	jal	80000200 <freq>
+    80000292:	3b2010ef          	jal	80001644 <uptime>
+    80000296:	d2150453          	fcvt.d.wu	fs0,a0
+    8000029a:	000f4537          	lui	a0,0xf4
+    8000029e:	24050513          	addi	a0,a0,576 # f4240 <i+0xf4220>
+    800002a2:	00002797          	auipc	a5,0x2
+    800002a6:	b1e7b907          	fld	fs2,-1250(a5) # 80001dc0 <am_keycode+0x210>
+    800002aa:	00002797          	auipc	a5,0x2
+    800002ae:	b1e7b487          	fld	fs1,-1250(a5) # 80001dc8 <am_keycode+0x218>
+    800002b2:	f4fff0ef          	jal	80000200 <freq>
+    800002b6:	38e010ef          	jal	80001644 <uptime>
+    800002ba:	d21507d3          	fcvt.d.wu	fa5,a0
+    800002be:	13247453          	fmul.d	fs0,fs0,fs2
+    800002c2:	00002797          	auipc	a5,0x2
+    800002c6:	b0e7b707          	fld	fa4,-1266(a5) # 80001dd0 <am_keycode+0x220>
+    800002ca:	1327f7d3          	fmul.d	fa5,fa5,fs2
+    800002ce:	00002797          	auipc	a5,0x2
+    800002d2:	b0a7b687          	fld	fa3,-1270(a5) # 80001dd8 <am_keycode+0x228>
+    800002d6:	0028                	addi	a0,sp,8
+    800002d8:	00001617          	auipc	a2,0x1
+    800002dc:	62860613          	addi	a2,a2,1576 # 80001900 <__am_timer_read+0x8c>
+    800002e0:	06400593          	li	a1,100
+    800002e4:	1a947453          	fdiv.d	fs0,fs0,fs1
+    800002e8:	1a97f7d3          	fdiv.d	fa5,fa5,fs1
+    800002ec:	0a87f7d3          	fsub.d	fa5,fa5,fs0
+    800002f0:	1af777d3          	fdiv.d	fa5,fa4,fa5
+    800002f4:	1af6f753          	fdiv.d	fa4,fa3,fa5
+    800002f8:	e20786d3          	fmv.x.d	a3,fa5
+    800002fc:	e2070753          	fmv.x.d	a4,fa4
+    80000300:	312010ef          	jal	80001612 <snprintf_>
+    80000304:	00814503          	lbu	a0,8(sp)
+    80000308:	c911                	beqz	a0,8000031c <freq_test+0x9e>
+    8000030a:	e922                	sd	s0,144(sp)
+    8000030c:	0020                	addi	s0,sp,8
+    8000030e:	0405                	addi	s0,s0,1
+    80000310:	0ea000ef          	jal	800003fa <_putc>
+    80000314:	00044503          	lbu	a0,0(s0)
+    80000318:	f97d                	bnez	a0,8000030e <freq_test+0x90>
+    8000031a:	644a                	ld	s0,144(sp)
+    8000031c:	60ea                	ld	ra,152(sp)
+    8000031e:	242a                	fld	fs0,136(sp)
+    80000320:	248a                	fld	fs1,128(sp)
+    80000322:	3966                	fld	fs2,120(sp)
+    80000324:	610d                	addi	sp,sp,160
+    80000326:	8082                	ret
 	...
 
 Disassembly of section .text.startup:
@@ -663,11 +669,11 @@ Disassembly of section .text._etoa:
     8000090e:	8942                	mv	s2,a6
     80000910:	1c078763          	beqz	a5,80000ade <_etoa+0x1ee>
     80000914:	00001797          	auipc	a5,0x1
-    80000918:	4c47b787          	fld	fa5,1220(a5) # 80001dd8 <am_keycode+0x228>
+    80000918:	4cc7b787          	fld	fa5,1228(a5) # 80001de0 <am_keycode+0x230>
     8000091c:	a2a797d3          	flt.d	a5,fa5,fa0
     80000920:	1a079f63          	bnez	a5,80000ade <_etoa+0x1ee>
     80000924:	00001797          	auipc	a5,0x1
-    80000928:	4bc7b787          	fld	fa5,1212(a5) # 80001de0 <am_keycode+0x230>
+    80000928:	4c47b787          	fld	fa5,1220(a5) # 80001de8 <am_keycode+0x238>
     8000092c:	a2f517d3          	flt.d	a5,fa0,fa5
     80000930:	1a079763          	bnez	a5,80000ade <_etoa+0x1ee>
     80000934:	f20007d3          	fmv.d.x	fa5,zero
@@ -687,9 +693,9 @@ Disassembly of section .text._etoa:
     80000960:	c017879b          	addiw	a5,a5,-1023
     80000964:	d2078653          	fcvt.d.w	fa2,a5
     80000968:	00001797          	auipc	a5,0x1
-    8000096c:	4807b687          	fld	fa3,1152(a5) # 80001de8 <am_keycode+0x238>
+    8000096c:	4887b687          	fld	fa3,1160(a5) # 80001df0 <am_keycode+0x240>
     80000970:	00001797          	auipc	a5,0x1
-    80000974:	4807b707          	fld	fa4,1152(a5) # 80001df0 <am_keycode+0x240>
+    80000974:	4887b707          	fld	fa4,1160(a5) # 80001df8 <am_keycode+0x248>
     80000978:	00c61693          	slli	a3,a2,0xc
     8000097c:	3ff00793          	li	a5,1023
     80000980:	17d2                	slli	a5,a5,0x34
@@ -697,30 +703,30 @@ Disassembly of section .text._etoa:
     80000984:	8edd                	or	a3,a3,a5
     80000986:	72d67643          	fmadd.d	fa2,fa2,fa3,fa4
     8000098a:	00001517          	auipc	a0,0x1
-    8000098e:	46e53787          	fld	fa5,1134(a0) # 80001df8 <am_keycode+0x248>
+    8000098e:	47653787          	fld	fa5,1142(a0) # 80001e00 <am_keycode+0x250>
     80000992:	f2068753          	fmv.d.x	fa4,a3
     80000996:	00001797          	auipc	a5,0x1
-    8000099a:	46a7b587          	fld	fa1,1130(a5) # 80001e00 <am_keycode+0x250>
+    8000099a:	4727b587          	fld	fa1,1138(a5) # 80001e08 <am_keycode+0x258>
     8000099e:	00001797          	auipc	a5,0x1
-    800009a2:	46a7b687          	fld	fa3,1130(a5) # 80001e08 <am_keycode+0x258>
+    800009a2:	4727b687          	fld	fa3,1138(a5) # 80001e10 <am_keycode+0x260>
     800009a6:	0af777d3          	fsub.d	fa5,fa4,fa5
     800009aa:	00001797          	auipc	a5,0x1
-    800009ae:	4667b207          	fld	ft4,1126(a5) # 80001e10 <am_keycode+0x260>
+    800009ae:	46e7b207          	fld	ft4,1134(a5) # 80001e18 <am_keycode+0x268>
     800009b2:	00001797          	auipc	a5,0x1
-    800009b6:	4667b187          	fld	ft3,1126(a5) # 80001e18 <am_keycode+0x268>
+    800009b6:	46e7b187          	fld	ft3,1134(a5) # 80001e20 <am_keycode+0x270>
     800009ba:	00001797          	auipc	a5,0x1
-    800009be:	4667b107          	fld	ft2,1126(a5) # 80001e20 <am_keycode+0x270>
+    800009be:	46e7b107          	fld	ft2,1134(a5) # 80001e28 <am_keycode+0x278>
     800009c2:	00001797          	auipc	a5,0x1
-    800009c6:	4667b707          	fld	fa4,1126(a5) # 80001e28 <am_keycode+0x278>
+    800009c6:	46e7b707          	fld	fa4,1134(a5) # 80001e30 <am_keycode+0x280>
     800009ca:	00001797          	auipc	a5,0x1
-    800009ce:	46e7b087          	fld	ft1,1134(a5) # 80001e38 <am_keycode+0x288>
+    800009ce:	4767b087          	fld	ft1,1142(a5) # 80001e40 <am_keycode+0x290>
     800009d2:	00001797          	auipc	a5,0x1
-    800009d6:	3fe7b007          	fld	ft0,1022(a5) # 80001dd0 <am_keycode+0x220>
+    800009d6:	4067b007          	fld	ft0,1030(a5) # 80001dd8 <am_keycode+0x228>
     800009da:	62b7f7c3          	fmadd.d	fa5,fa5,fa1,fa2
     800009de:	00001797          	auipc	a5,0x1
-    800009e2:	4527b587          	fld	fa1,1106(a5) # 80001e30 <am_keycode+0x280>
+    800009e2:	45a7b587          	fld	fa1,1114(a5) # 80001e38 <am_keycode+0x288>
     800009e6:	00001797          	auipc	a5,0x1
-    800009ea:	45a7b607          	fld	fa2,1114(a5) # 80001e40 <am_keycode+0x290>
+    800009ea:	4627b607          	fld	fa2,1122(a5) # 80001e48 <am_keycode+0x298>
     800009ee:	c20797d3          	fcvt.w.d	a5,fa5,rtz
     800009f2:	d20787d3          	fcvt.d.w	fa5,a5
     800009f6:	00078b9b          	sext.w	s7,a5
@@ -760,12 +766,12 @@ Disassembly of section .text._etoa:
     80000a78:	00297c13          	andi	s8,s2,2
     80000a7c:	c3c1                	beqz	a5,80000afc <_etoa+0x20c>
     80000a7e:	00001797          	auipc	a5,0x1
-    80000a82:	3ca7b787          	fld	fa5,970(a5) # 80001e48 <am_keycode+0x298>
+    80000a82:	3d27b787          	fld	fa5,978(a5) # 80001e50 <am_keycode+0x2a0>
     80000a86:	f2060753          	fmv.d.x	fa4,a2
     80000a8a:	a2e787d3          	fle.d	a5,fa5,fa4
     80000a8e:	12078663          	beqz	a5,80000bba <_etoa+0x2ca>
     80000a92:	00001797          	auipc	a5,0x1
-    80000a96:	3be7b787          	fld	fa5,958(a5) # 80001e50 <am_keycode+0x2a0>
+    80000a96:	3c67b787          	fld	fa5,966(a5) # 80001e58 <am_keycode+0x2a8>
     80000a9a:	a2f717d3          	flt.d	a5,fa4,fa5
     80000a9e:	10078e63          	beqz	a5,80000bba <_etoa+0x2ca>
     80000aa2:	4681                	li	a3,0
@@ -907,21 +913,21 @@ Disassembly of section .text._ftoa:
     80000c08:	7139                	addi	sp,sp,-64
     80000c0a:	f426                	sd	s1,40(sp)
     80000c0c:	00001497          	auipc	s1,0x1
-    80000c10:	1d44b787          	fld	fa5,468(s1) # 80001de0 <am_keycode+0x230>
+    80000c10:	1dc4b787          	fld	fa5,476(s1) # 80001de8 <am_keycode+0x238>
     80000c14:	fc06                	sd	ra,56(sp)
     80000c16:	a2f51853          	flt.d	a6,fa0,fa5
     80000c1a:	20081763          	bnez	a6,80000e28 <_ftoa+0x22a>
     80000c1e:	f822                	sd	s0,48(sp)
     80000c20:	8436                	mv	s0,a3
     80000c22:	00001697          	auipc	a3,0x1
-    80000c26:	1b66b787          	fld	fa5,438(a3) # 80001dd8 <am_keycode+0x228>
+    80000c26:	1be6b787          	fld	fa5,446(a3) # 80001de0 <am_keycode+0x230>
     80000c2a:	8faa                	mv	t6,a0
     80000c2c:	82ae                	mv	t0,a1
     80000c2e:	a2a796d3          	flt.d	a3,fa5,fa0
     80000c32:	83b2                	mv	t2,a2
     80000c34:	eee5                	bnez	a3,80000d2c <_ftoa+0x12e>
     80000c36:	00001697          	auipc	a3,0x1
-    80000c3a:	2226b787          	fld	fa5,546(a3) # 80001e58 <am_keycode+0x2a8>
+    80000c3a:	1926b787          	fld	fa5,402(a3) # 80001dc8 <am_keycode+0x218>
     80000c3e:	a2a796d3          	flt.d	a3,fa5,fa0
     80000c42:	1c069963          	bnez	a3,80000e14 <_ftoa+0x216>
     80000c46:	00001697          	auipc	a3,0x1
@@ -953,7 +959,7 @@ Disassembly of section .text._ftoa:
     80000c9e:	d20807d3          	fcvt.d.w	fa5,a6
     80000ca2:	2214                	fld	fa3,0(a2)
     80000ca4:	00001617          	auipc	a2,0x1
-    80000ca8:	16c63707          	fld	fa4,364(a2) # 80001e10 <am_keycode+0x260>
+    80000ca8:	17463707          	fld	fa4,372(a2) # 80001e18 <am_keycode+0x268>
     80000cac:	0af577d3          	fsub.d	fa5,fa0,fa5
     80000cb0:	00080f1b          	sext.w	t5,a6
     80000cb4:	12d7f7d3          	fmul.d	fa5,fa5,fa3

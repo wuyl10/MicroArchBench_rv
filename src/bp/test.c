@@ -52,7 +52,7 @@ int main()
         ONE
         end = nanosecond();
 
-        long long timeSpan = (end - begin);
+        double timeSpan = (end - begin);
 
         printf("%f\t", timeSpan / (N * (1L + 1L)));     //转为纳秒
     }
@@ -65,9 +65,9 @@ int main()
         TWO
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
-        printf("%f\t", timeSpan / (N * (2L + 1L)));
+        printf("%f\t", timeSpan  / (N * (2L + 1L)));
 
     }
     putstr("\n");
@@ -79,7 +79,7 @@ int main()
         FOUR
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
         
         printf("%f\t", timeSpan / (N * (4L + 1L)));
 
@@ -93,7 +93,7 @@ int main()
         EIGHT
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (8L + 1L)));
 
@@ -107,7 +107,7 @@ int main()
         SIXTEEN
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (16L + 1L)));
 
@@ -121,7 +121,7 @@ int main()
         THIRTYTWO
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
  
         printf("%f\t", timeSpan / (N * (32L + 1L)));
 
@@ -135,7 +135,7 @@ int main()
         SIXTYFOUR
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (64L + 1L)));
 
@@ -149,7 +149,7 @@ int main()
         HUNDRED
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (128L + 1L)));
 
@@ -163,7 +163,7 @@ int main()
         TWOHUNDRED
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (256L + 1L)));
 
@@ -177,7 +177,7 @@ int main()
         FIVEHUNDRED
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (512L + 1L)));
 
@@ -191,7 +191,7 @@ int main()
         TENHUNDRED
         end = nanosecond();
 
-        long long timeSpan =  (end - begin);
+        double timeSpan =  (end - begin);
 
         printf("%f\t", timeSpan / (N * (1024L + 1L)));
 
