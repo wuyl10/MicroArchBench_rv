@@ -478,19 +478,19 @@ void fsqrtlat_test(double freq) {
 // =================== Main Function ===================
 int main() {
     double freq = CPU_FREQ; // 根据实际硬件频率设置
-    // mullat_test(freq);
-    // mulbw_test(freq);
-    // udivlat_test(freq);
-    // sdivlat_test(freq);
-    // udivbw_test(freq);
+    mullat_test(freq);
+    mulbw_test(freq);
+    udivlat_test(freq);
+    sdivlat_test(freq);
+    udivbw_test(freq);
     faddlat_test(freq);
-    // faddbw_test(freq);
-    // fmalat_test(freq);
-    // fmabw_test(freq);       //需要向量扩展
-    // fmullat_test(freq);
-    // fmulbw_test(freq);
-    // fdivlat_test(freq);
-    // fdivbw_test(freq);
-    // fsqrtlat_test(freq);
+    faddbw_test(freq);
+    fmalat_test(freq);
+    fmabw_test(freq);       //需要向量扩展
+    fmullat_test(freq);
+    fmulbw_test(freq);
+    fdivlat_test(freq);
+    fdivbw_test(freq);
+    fsqrtlat_test(freq);
     return 0;
 }

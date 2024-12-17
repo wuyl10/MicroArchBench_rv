@@ -30,7 +30,7 @@ void __attribute__ ((noinline)) mov_imm_zero(uint64_t cnt) {
     "li t6, 0\n\t" 
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -61,7 +61,7 @@ void __attribute__ ((noinline)) mov_imm_one(uint64_t cnt) {
     "li t6, 1\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -84,16 +84,16 @@ void mov_imm_one_test(double freq) {
 void __attribute__ ((noinline)) mov_chain(uint64_t cnt) {
 #undef ONE
 #define ONE \
-    "mv t0, t1\n\t" \
-    "mv t1, t2\n\t" \
-    "mv t2, t3\n\t" \
-    "mv t3, t4\n\t" \
-    "mv t4, t5\n\t" \
-    "mv t5, t6\n\t" \
-    "mv t6, t0\n\t"
+    "mv t1, t0\n\t" \
+    "mv t2, t1\n\t" \
+    "mv t3, t2\n\t" \
+    "mv t4, t3\n\t" \
+    "mv t5, t4\n\t" \
+    "mv t6, t5\n\t" \
+    "mv t0, t6\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -124,7 +124,7 @@ void __attribute__ ((noinline)) mov_single(uint64_t cnt) {
     "mv t6, a0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -155,7 +155,7 @@ void __attribute__ ((noinline)) fmov_single(uint64_t cnt) {
     "fmv.d f10, f0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -180,7 +180,7 @@ void __attribute__ ((noinline)) mov_self(uint64_t cnt) {
 #define ONE "mv t0, t0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -212,7 +212,7 @@ void __attribute__ ((noinline)) mov_self_mul(uint64_t cnt) {
     "mv t6, t6\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -239,7 +239,7 @@ void __attribute__ ((noinline)) mov_bounce(uint64_t cnt) {
     "mv t1, t0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -264,7 +264,7 @@ void __attribute__ ((noinline)) sub_(uint64_t cnt) {
 #define ONE "sub t0, t0, t0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
@@ -288,7 +288,7 @@ void __attribute__ ((noinline)) xor_eli(uint64_t cnt) {
 #define ONE "xor t0, t0, t0\n\t"
 
     asm volatile(
-        ".align 4\n\t"
+        ".align 8\n\t"
         "1:\n\t"
         HUNDRED
         "addi %0, %0, -1\n\t"
